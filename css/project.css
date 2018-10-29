@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+/*************************************************
+            DEFAULTS
+*************************************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+
+html {
+    font-size: 16px;
+    font-family: Source Sans Pr, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1,h2 {
+    color: #86faf5;
+      text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+p {}
+
+a {}
+
+ul {}
+
+ol {}
+
+li {}
+
+img {
+    width: 30%;
+}
+
+/*************************************************
+            HEADER
+*************************************************/
+header {
+    background-image: url(../img/stairs.jpeg);
+    background-size: cover;
+    padding: 1rem 2rem 5rem 2rem;
+    color: black;
+    border-top: 1rem solid #86faf5;
+}
+
+header > h1 {
+    text-shadow: 1px 1px 2px #FFF;
+    color: #000;
+}
+
+header > h2 {
+    text-shadow: 1px 1px 2px #FFF;
+    color: #000;
+}
+
+/*************************************************
+            NAVMENU
+*************************************************/
+nav {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+}
+
+nav > a,
+nav > a:visited,
+nav > a:link {}
+
+nav > a:active,
+nav > a:focus,
+nav > a:hover {}
+
+/*************************************************
+            MAIN CONTENT
+*************************************************/
+main {
+    padding: 1rem 2rem;
+}
+
+section {}
+
+section p {}
+
+.second {
+    color: #444;
+}
+
+.third {
+    color: #444;
+}
+
+section p img {
+    float: left;
+    padding: 1rem 1rem 1rem 0rem;
+}
+
+/*************************************************
+            FOOTER
+*************************************************/
+footer {
+    background-color: #BBB;
+    border-top: 5px solid #86faf5;
+}
+
+.foot nav {}
+
+.foot section {}
+
+.foot dl {}
+
+.foot dt {}
+
+.foot dd {
+    font-size: 1rem;
+}
+
+.foot dd a,
+.foot dd a:visited {}
+
+.foot dd a:active,
+.foot dd a:focus,
+.foot dd a:hover {}
+
+/*************************************************
+            MEDIA QUERIES for layout
+*************************************************/
+@media (max-width: 599px) {
+    header {
+        padding: 1rem 1rem;
+    }
+    main {
+        padding: 1rem;
+    }
+    .mainnav {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .mainnav a {
+        border: 1px solid #000;
+        background-color: #DDD;
+        padding-left: 1rem;
+    }
+    main section {
+        border-bottom: 2px solid #DDD;
+        padding: 1rem 0rem 1rem 0rem;
+    }
+    .subnav {
+        display: flex;
+        justify-content: space-around;
+    }
+    .foot {
+        display: grid;
+        padding: 1rem;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            'comments'
+            'links';
+    }
+    .comment {
+        grid-area: comments;
+    }
+    .subnav {
+        grid-area: links;
+    }
+    #city {
+        width: 100%;
+    }
+    #name {
+        width: 100%;
+    }
+    #email {
+        width: 100%
+    }
+    #comment {
+        width: 100%;
+        height: 40px;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width:999px) {
+    .mainnav {
+        display: flex;
+        justify-content: space-between;
+    }
+    .mainnav {
+        background-color: #DDD;
+    }
+    .primary {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-areas:
+            'first first'
+            'second third';
+    }
+    .first {
+        grid-area: first;
+        border-bottom: 2px solid #DDD;
+    }
+    .second {
+        grid-area: second;
+        padding-right: 1rem;
+        border-right: 2px solid #DDD;
+    }
+    .third {
+        grid-area: third;
+        padding-left: 1rem;
+    }
+    .foot {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            'subnav comments';
+    }
+    .subnav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        text-align: center;
+    }
+    .subnav .docs {
+        width: 100%;
+    }
+    .subnav .channels {
+        width: 100%;
+    }
+    .comments {
+        text-align: center;
+        align-self: center;
+    }
+    #city {
+        width: 60%;
+    }
+    #name {
+        width: 60%;
+        height: 20px;
+    }
+    #email {
+        width: 60%;
+        height: 20px;
+    }
+    #comment {
+        width: 60%;
+        height: 50px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .mainnav {
+        display: flex;
+        justify-content: space-around;
+    }
+    .mainnav {
+        background-color: #DDD;
+    }
+    .primary .first {
+        padding-right: 1rem;
+    }
+    .primary .second {
+        padding: 0rem 1rem;
+        border-right: 2px solid #DDD;
+        border-left: 2px solid #DDD;
+    }
+    .primary .third {
+        padding-left: 1rem;
+    }
+    .primary {
+        display: flex;
+        justify-content: space-around;
+    }
+    .foot {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            'subnav comments';
+    }
+    .subnav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        text-align: center;
+    }
+    .subnav .docs {
+        width: 100%;
+    }
+    .subnav .channels {
+        width: 100%;
+    }
+    .comments {
+        text-align: center;
+        align-self: center;
+    }
+    #city {
+        width: 60%;
+    }
+    #name {
+        width: 60%;
+        height: 20px;
+    }
+    #email {
+        width: 60%;
+        height: 20px;
+    }
+    #comment {
+        width: 60%;
+        height: 50px;
+    }
+}
